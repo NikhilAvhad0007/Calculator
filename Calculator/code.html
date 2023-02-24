@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            height:450px;
+            width: 300px;
+            border: 3px solid rgb(176, 15, 15);
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 100px;
+            background-color: rgb(37, 108, 144);
+            border-radius: 5%;
+
+        }
+
+        .pad {
+            width: 70px;
+            height: 65px;
+            border-radius: 20%;
+            font-size: larger;
+
+        }
+
+        .ac {
+            width: 70px;
+            height: 65px;
+            border: 3px solid rgb(102, 35, 35);
+            font-size: larger;
+            border-radius: 20%;
+            background-color: rgb(251, 255, 0);
+
+
+        }
+
+        .inputbar {
+            width: 290px;
+            height: 70px;
+            margin-top: 10px;
+            background-color:whitesmoke;
+            font-size: larger;
+            border-radius: 10%;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+    <input type="text" placeholder="input" class=" inputbar" id="ip">
+    <input type="text" placeholder="output" class=" inputbar" id="op">
+    <br>
+    <table>
+        <tr>
+            <td><button class="pad" onclick="display('1')" id="one" value="1">1</button></td>
+            <td><button class="pad" onclick="display('2')" id="two" value="2">2</button></td>
+            <td><button class="pad" onclick="display('3')" id="three" value="3">3</button></td>
+            <td><input type="button" value="AC" onclick="clears()" class="ac"></td>
+        <tr>
+            <td><button class="pad" onclick="display('4')" id="four" value="4">4</button></td>
+            <td><button class="pad" onclick="display('5')" id="five" value="5">5</button></td>
+            <td><button class="pad" onclick="display('6')" id="six" value="6">6</button></td>
+            <td><button class="pad" onclick="calculate()" id="equal" value="=">=</button></td>
+        </tr>
+        <tr>
+            <td><button class="pad" onclick="display('7')" id="seven" value="7">7</button></td>
+            <td><button class="pad" onclick="display('8')" id="eight" value="8">8</button></td>
+            <td><button class="pad" onclick="display('9')" id="nine" value="9">9</button></td>
+            <td><button class="pad" onclick="display('0')" id="zero" value="0">0</button></td>
+        </tr>
+        <tr>
+            <td><button class="pad" onclick="display('+')" id="plus" value="+">+</button></td>
+            <td><button class="pad" onclick="display('-')" id="minus" value="-">-</button></td>
+            <td><button class="pad" onclick="display('/')" id="divided" value="/">/</button></td>
+            <td><button class="pad" onclick="display('*')" id="mult" value="-">*</button></td>
+        </tr>
+    </table>
+</div>
+      <script>
+        var inp=document.getElementById("ip")
+        var out=document.getElementById("op")
+        function display(value)
+        {
+            let ele=document.getElementById("ip").value+=value;
+        }
+        function clears(){
+            document.getElementById("ip").value=" ";
+        }
+        function calculate(){
+            var p=document.getElementById("ip").value;
+            var q =eval(p);
+            document.getElementById("op").value=q;
+        }
+
+    </script>
+</body>
+
+</html>
